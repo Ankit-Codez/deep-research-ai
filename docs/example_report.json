@@ -1,0 +1,76 @@
+{
+  "query": "How does retrieval-augmented generation ground an LLM response?",
+  "title": "Research summary",
+  "status": "complete",
+  "search_queries": [
+    "How does retrieval-augmented generation ground an LLM response? primary sources",
+    "How does retrieval-augmented generation ground an LLM response? methods and evidence",
+    "How does retrieval-augmented generation ground an LLM response? limitations"
+  ],
+  "research_plan": null,
+  "step_status": {},
+  "research_iteration": 0,
+  "uncertainties": [],
+  "body_markdown": "MOCK SAMPLE — Evidence selected from retrieved sources:\n\n> Retrieval\\-augmented generation combines a language model with retrieved passages from an external document index\\. [1]\n\n> A retrieval pipeline fetches relevant external information at query time and supplies it as context for generation\\. [2]",
+  "sources": [
+    {
+      "original_url": "https://arxiv.org/abs/2005.11401",
+      "resolved_url": null,
+      "source_id": "src_02ad74cdb0c9081ff68958b3398f19f5b946b93f506093ac055d1205158730d7",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "content": "Retrieval-augmented generation combines a language model with retrieved passages from an external document index.",
+      "retrieved_at": "2026-01-01T00:00:00Z"
+    },
+    {
+      "original_url": "https://docs.langchain.com/oss/python/deepagents/retrieval",
+      "resolved_url": null,
+      "source_id": "src_b8a9eac11828d0f69e4fa26ad440ef20caf8c43e958b7181b7a520c608316d2d",
+      "title": "Retrieval - LangChain documentation",
+      "content": "A retrieval pipeline fetches relevant external information at query time and supplies it as context for generation.",
+      "retrieved_at": "2026-01-01T00:00:00Z"
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_1",
+      "source_id": "src_02ad74cdb0c9081ff68958b3398f19f5b946b93f506093ac055d1205158730d7",
+      "excerpt": "Retrieval-augmented generation combines a language model with retrieved passages from an external document index.",
+      "note": "Exact passage validated against retrieved text."
+    },
+    {
+      "evidence_id": "ev_2",
+      "source_id": "src_b8a9eac11828d0f69e4fa26ad440ef20caf8c43e958b7181b7a520c608316d2d",
+      "excerpt": "A retrieval pipeline fetches relevant external information at query time and supplies it as context for generation.",
+      "note": "Exact passage validated against retrieved text."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim_1",
+      "claim": "Retrieval-augmented generation combines a language model with retrieved passages from an external document index.",
+      "verdict": "supported",
+      "rationale": "This exact passage occurs in the referenced source; truth is not independently verified.",
+      "evidence_ids": [
+        "ev_1"
+      ]
+    },
+    {
+      "claim_id": "claim_2",
+      "claim": "A retrieval pipeline fetches relevant external information at query time and supplies it as context for generation.",
+      "verdict": "supported",
+      "rationale": "This exact passage occurs in the referenced source; truth is not independently verified.",
+      "evidence_ids": [
+        "ev_2"
+      ]
+    }
+  ],
+  "citations": {
+    "1": "src_02ad74cdb0c9081ff68958b3398f19f5b946b93f506093ac055d1205158730d7",
+    "2": "src_b8a9eac11828d0f69e4fa26ad440ef20caf8c43e958b7181b7a520c608316d2d"
+  },
+  "limitations": [
+    "Extractive summary of retrieved text; source claims are not independently fact-checked.",
+    "At most 8000 text characters per page were considered.",
+    "MOCK MODE: fixed local RAG samples, not live search results or downloaded pages."
+  ]
+}

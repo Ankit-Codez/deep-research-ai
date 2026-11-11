@@ -1,0 +1,39 @@
+# Research graph
+
+Generated from the compiled StateGraph. Conditional edges select one route; they do not create parallel workers.
+
+```mermaid
+---
+config:
+  flowchart:
+    curve: linear
+---
+graph TD;
+	__start__([<p>__start__</p>]):::first
+	planner(planner)
+	search(search)
+	evidence(evidence)
+	verification(verification)
+	writer(writer)
+	retry(retry)
+	__end__([<p>__end__</p>]):::last
+	__start__ --> planner;
+	evidence -.-> verification;
+	evidence -.-> writer;
+	planner -.-> search;
+	planner -.-> writer;
+	retry -.-> search;
+	retry -.-> writer;
+	search -.-> evidence;
+	search -.-> retry;
+	search -.-> writer;
+	verification -.-> retry;
+	verification -.-> writer;
+	writer --> __end__;
+	classDef default fill:#f2f0ff,line-height:1.2
+	classDef first fill-opacity:0
+	classDef last fill:#bfb6fc
+
+```
+
+Search retries missing pages before evidence extraction; verification retries unresolved high-priority claims. Both return through the same bounded retry-to-search edge and share run budgets. Failed stages and exhausted budgets route to the writer. See [verification details](phase4.md) and [depth limits](phase5.md#depth-and-limits).

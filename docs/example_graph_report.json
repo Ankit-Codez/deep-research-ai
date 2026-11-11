@@ -1,0 +1,161 @@
+{
+  "query": "How does RAG ground an answer?",
+  "title": "Research summary",
+  "status": "complete",
+  "search_queries": [
+    "How does RAG ground an answer? primary evidence",
+    "How does RAG ground an answer? retrieval methods",
+    "How does RAG ground an answer? limitations"
+  ],
+  "research_plan": {
+    "query": "How does RAG ground an answer?",
+    "strategy": "Inspect primary evidence, retrieval methods, and limitations (local mock example).",
+    "sub_questions": [
+      {
+        "question_id": "sq_1",
+        "question": "How does RAG ground an answer? primary evidence"
+      },
+      {
+        "question_id": "sq_2",
+        "question": "How does RAG ground an answer? retrieval methods"
+      },
+      {
+        "question_id": "sq_3",
+        "question": "How does RAG ground an answer? limitations"
+      }
+    ]
+  },
+  "step_status": {
+    "planner": "completed",
+    "search": "completed",
+    "evidence": "completed",
+    "verification": "completed",
+    "retry": "skipped",
+    "writer": "completed"
+  },
+  "research_iteration": 1,
+  "usage": {
+    "llm_calls": 3,
+    "searches": 3,
+    "reserved_tokens": 15066,
+    "reported_tokens": 0,
+    "estimated_cost_usd": null,
+    "elapsed_seconds": 0.009836399927735329,
+    "limit_reason": null
+  },
+  "uncertainties": [
+    "Verification is an LLM assessment of retrieved evidence, not independent verification of source truth.",
+    "At most 8000 text characters per page were considered.",
+    "MOCK MODE: fixed local RAG samples; no live research was performed."
+  ],
+  "body_markdown": "MOCK SAMPLE — Evidence selected and checked against retrieved sources:\n\n> Retrieval\\-augmented generation combines a language model with retrieved passages from an external document index\\. [1]\n\n> A retrieval pipeline fetches relevant external information at query time and supplies it as context for generation\\. [2]\n\n## Uncertainty\n\n- Verification is an LLM assessment of retrieved evidence, not independent verification of source truth\\.\n- At most 8000 text characters per page were considered\\.\n- MOCK MODE: fixed local RAG samples; no live research was performed\\.",
+  "sources": [
+    {
+      "original_url": "https://arxiv.org/abs/2005.11401",
+      "resolved_url": null,
+      "source_id": "src_02ad74cdb0c9081ff68958b3398f19f5b946b93f506093ac055d1205158730d7",
+      "title": "Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks",
+      "content": "Retrieval-augmented generation combines a language model with retrieved passages from an external document index.",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "published_at": null,
+      "modified_at": null
+    },
+    {
+      "original_url": "https://docs.langchain.com/oss/python/deepagents/retrieval",
+      "resolved_url": null,
+      "source_id": "src_b8a9eac11828d0f69e4fa26ad440ef20caf8c43e958b7181b7a520c608316d2d",
+      "title": "Retrieval - LangChain documentation",
+      "content": "A retrieval pipeline fetches relevant external information at query time and supplies it as context for generation.",
+      "retrieved_at": "2026-01-01T00:00:00Z",
+      "published_at": null,
+      "modified_at": null
+    }
+  ],
+  "evidence": [
+    {
+      "evidence_id": "ev_b64406bb79df685ba6150879c102eaae47d6ca7024636c368f2d317a0fc09b6b",
+      "source_id": "src_02ad74cdb0c9081ff68958b3398f19f5b946b93f506093ac055d1205158730d7",
+      "excerpt": "Retrieval-augmented generation combines a language model with retrieved passages from an external document index.",
+      "note": "Exact passage validated against retrieved source text."
+    },
+    {
+      "evidence_id": "ev_d3ca87349cdd06d6db320a56a17e124d0eb059ba8f33beda72879eb64f6395b4",
+      "source_id": "src_b8a9eac11828d0f69e4fa26ad440ef20caf8c43e958b7181b7a520c608316d2d",
+      "excerpt": "A retrieval pipeline fetches relevant external information at query time and supplies it as context for generation.",
+      "note": "Exact passage validated against retrieved source text."
+    }
+  ],
+  "claims": [
+    {
+      "claim_id": "claim_883d7b412b0bd677c780b4cdfe514e9ddb7417c079be59d10e7659efc7507e86",
+      "claim": "Retrieval-augmented generation combines a language model with retrieved passages from an external document index.",
+      "verdict": "supported",
+      "rationale": "The claim matches supplied text verbatim.",
+      "evidence_ids": [
+        "ev_b64406bb79df685ba6150879c102eaae47d6ca7024636c368f2d317a0fc09b6b",
+        "ev_d3ca87349cdd06d6db320a56a17e124d0eb059ba8f33beda72879eb64f6395b4"
+      ],
+      "source_ids": [
+        "src_02ad74cdb0c9081ff68958b3398f19f5b946b93f506093ac055d1205158730d7",
+        "src_b8a9eac11828d0f69e4fa26ad440ef20caf8c43e958b7181b7a520c608316d2d"
+      ],
+      "supporting_source_ids": [
+        "src_02ad74cdb0c9081ff68958b3398f19f5b946b93f506093ac055d1205158730d7"
+      ],
+      "contradicting_source_ids": [],
+      "passage_assessments": [
+        {
+          "evidence_id": "ev_b64406bb79df685ba6150879c102eaae47d6ca7024636c368f2d317a0fc09b6b",
+          "relation": "supports",
+          "explanation": "Literal match in this fixture."
+        },
+        {
+          "evidence_id": "ev_d3ca87349cdd06d6db320a56a17e124d0eb059ba8f33beda72879eb64f6395b4",
+          "relation": "irrelevant",
+          "explanation": "No literal support in this fixture."
+        }
+      ],
+      "disagreement": false
+    },
+    {
+      "claim_id": "claim_d0103fa8c35f1ffd19251ef8b2b47377b9ae695815767870df5fbf32a87c4e66",
+      "claim": "A retrieval pipeline fetches relevant external information at query time and supplies it as context for generation.",
+      "verdict": "supported",
+      "rationale": "The claim matches supplied text verbatim.",
+      "evidence_ids": [
+        "ev_b64406bb79df685ba6150879c102eaae47d6ca7024636c368f2d317a0fc09b6b",
+        "ev_d3ca87349cdd06d6db320a56a17e124d0eb059ba8f33beda72879eb64f6395b4"
+      ],
+      "source_ids": [
+        "src_02ad74cdb0c9081ff68958b3398f19f5b946b93f506093ac055d1205158730d7",
+        "src_b8a9eac11828d0f69e4fa26ad440ef20caf8c43e958b7181b7a520c608316d2d"
+      ],
+      "supporting_source_ids": [
+        "src_b8a9eac11828d0f69e4fa26ad440ef20caf8c43e958b7181b7a520c608316d2d"
+      ],
+      "contradicting_source_ids": [],
+      "passage_assessments": [
+        {
+          "evidence_id": "ev_b64406bb79df685ba6150879c102eaae47d6ca7024636c368f2d317a0fc09b6b",
+          "relation": "irrelevant",
+          "explanation": "No literal support in this fixture."
+        },
+        {
+          "evidence_id": "ev_d3ca87349cdd06d6db320a56a17e124d0eb059ba8f33beda72879eb64f6395b4",
+          "relation": "supports",
+          "explanation": "Literal match in this fixture."
+        }
+      ],
+      "disagreement": false
+    }
+  ],
+  "citations": {
+    "1": "src_02ad74cdb0c9081ff68958b3398f19f5b946b93f506093ac055d1205158730d7",
+    "2": "src_b8a9eac11828d0f69e4fa26ad440ef20caf8c43e958b7181b7a520c608316d2d"
+  },
+  "limitations": [
+    "Verification is an LLM assessment of retrieved evidence, not independent verification of source truth.",
+    "At most 8000 text characters per page were considered.",
+    "MOCK MODE: fixed local RAG samples; no live research was performed."
+  ]
+}
